@@ -63,169 +63,47 @@ E-mail:  4416630@ed.tus.ac.jp
 
 \maketitle
 
-\section*{Abstract}
-
-All-optical logic gates(AOLGs) are composed of all-optical devices which can operate as well as transistor under high-speed bit rates and essential for all optical communication network. Althought many researches on AOLGs have been demonstrated, discussions about the volume reduction or less energy consumption are few. In this paper, we propose all optical AND gate using photonic crystal quantum-dot semiconductor optical amplifiers(PC-QDSOA) and numerically analyze the input-output characteristics at 160Gb/s. Moreover, in order to show the effectiveness of the proposed gate, we compare the proposed gate with conventional one in terms of device size, energy consumption and performance.
-
 \section{Introduction}
 % 全般的な話
-High-speed and large capacity data transmission is required to cope with expanding network traffic data{\cite{qdsoa_ethernet}}. In current optical network, optical signal goes to destination through optical fiber with being affected by noise. Thus, re-amplification, re-timing and re-shaping operations are essential for reliable optical network. These days, electronic devices realize these operations and the problems are their processing speed limitation and energy consumption required for optic-electric/electric-optic conversion{\cite{3r_regeneration}}. In order to cope with these problems, all-optical signal processing is required and many researchers worked on and developed all-optical devices which realize this technology.
-% QDSOAについての話
-QDSOA is one of these devices which can be useful in many applications because of it's fast gain recovery time and nonlinear optics effect{\cite{qdsoa_aosp}}. QD's confinement of electrons and electron holes enables fast gain recovery and SOA's gain saturation enables nonlinear optics effect, respectively.
-% PCについての話
-On the other hand, the PC is a dielectric material which consists of two different refractive indexes periodically. The lightwaves in specific bandwidth cannot propagate through the PC. PC waveguides(PCWs) use this characteristic which can be obtained PC slab with creating a line defect. They can confine the lightwaves perpendicular and parallel to the direction of lightwaves propagation. Moreover, their dispersion relation can slow down lightwaves which can be useful when they are combined with SOA or QDSOA. \par
-% AOLGsについての話
-AOLGs are the applications of all-optical devices which can operate binary inputs. Although many AOLGs using various all-optical devices have been developed, the length of these gates is larger than one of electrical logic gates because all-optical devices require certain length to operate as a component of AOLGs. For instance, a length of QDSOA is about 2mm{\cite{qdsoa_nssm}}, whereas the one of transistors, used for commercially available electronic devices, is about 14nm{\cite{current_cpu}}.
+High-speed and large capacity data transmission is required to cope with expanding network traffic data{\cite{qdsoa_ethernet}}. These days, electronic devices realize 3R operations and the problems are their processing speed limitation and energy consumption required for optic-electric/electric-optic conversion{\cite{3r_regeneration}}. All-optical signal processing solve these problems and all-optical logic gates(AOLGs) are essential for realizing the technology. Although many AOLGs using various all-optical devices have been developed, the length of these gates is larger than one of electrical logic gates.
 % 研究の意義・これからやることの説明
-Few researches discuss about the length of device which is important factor for developing high-density integrated and less energy consumption device. Thus, we propose PC-QDSOA assisted all-optical AND gate. AND gate plays an important role for multiplexer and demultiplexer circuits whose applications are communication system, computer memory and arithmetic logic unit. To our knowledge, there is no research about numerically analyzing PC-QDSOA assisted all-optical AND gate. The results in this paper show that the realization of the all-optical AND gate is feasible with the proposed PC-QDSOA assisted all-optical AND gate at 160Gb/s.
+In order to reduce the length of these gates, we propose photonic crystal quantum-dot semiconductor optical amplifiers(PC-QDSOA){\cite{pcqdsoa}} assisted all-optical AND gate. To our knowledge, there is no research about numerically analyzing PC-QDSOA assisted all-optical AND gate. The results in this paper show that the realization of the proposed gate is feasible at 160Gb/s.
 
-\section{PC-QDSOA model}
-% PC-QDSOAの構成について
-The PC-QDSOAs used in this study are composed of GaAs, ${\rm{In_{0.15}Ga_{0.85}As}}$ and InAs as an active region to enhance optical power around ${\rm{1.3\mu m}}${\cite{theory_of_qdsoa}}. The population inversion in the active regions of amplifiers is achieved by passing current through laterally doped ${\rm{p^{+}-p-n^{+}}}$ structures. Also, the waveguide of the PC-QDSOA is W1 PCW wherein slow light can be achieved with either zero group velocity dispersion and zero third order dispersion in specific bandwidth. This waveguide can be archived by proper shifting and narrowing of the first two rows of air holes adjacent to the waveguide core. The schematic diagram of PC-QDSOA waveguide is illustrated in Fig.{\ref{fig:pcqdsoa}}.
-
-\begin{figure}[htbp]
-\begin{center}
-  \includegraphics[width=70mm]{pcqdsoa.eps}
-  \caption{Schematic diagram of PC-QDSOA waveguide}
-  \label{fig:pcqdsoa}
-\end{center}
-\end{figure}
-
-% PC-QDSOAがレート方程式で理論解析できることを説明
-The operation of the PC-QDSOAs can be theoretically studied by means of a rate equation model{\cite{pcqdsoa}}. InAs QDs consists of a ground state (GS), an excited state (ES), and an upper state (US). A quantum well (QW) is common carrier reservoir for QDs. Due to variability in the size and shape of QDs with use of Stranski-Krastanov mode, the carrier dynamics in the QDs can be described by 1088 variables. Thus, a rate equation of the PC-QDSOA is as follows:
-
-\begingroup\makeatletter\def\f@size{7}\check@mathfonts
-\begin{eqnarray}
-  \label{eq:pc_qd_qw}
-  \frac{ {\partial}f^{c(v)}_{w} }{ {\partial}t } & = & 
-	\frac{\eta_{inj}I}{qN^{c(v)}_{W}} - 
-	\frac{ \sqrt{ f^{c}_{w} f^{v}_{w} } }{ \hat{\tau}^{c(v)}_{wr} } + 
-	\frac{ D^{c(v)}_{u} }{ D^{c(v)}_{w} } \sum_{j=1}^{2M+1} G^{c(v)}_{j} \nonumber\\ &&
-	\times
-	\left(
-		\frac{ f^{c(v)}_{u,j} }{ \hat{\tau}^{c(v)}_{uw,j} }	\left(1 - f^{c(v)}_{w} \right) -
-		\frac{ f^{c(v)}_{w}  }{ \hat{\tau}^{c(v)}_{wu}  } 	\left(1 - f^{c(v)}_{u,j}\right)
-	\right)
-  \\
-  \label{eq:pc_qd_us}
-  \frac{ {\partial}f^{c(v)}_{u,j} }{ {\partial}t } & = & 
-	\frac{ f^{c(v)}_{w}  }{ \hat{\tau}^{c(v)}_{wu}  }	\left(1 - f^{c(v)}_{u,j}\right) -
-	\frac{ f^{c(v)}_{u,j} }{ \hat{\tau}^{c(v)}_{uw,j} }	\left(1 - f^{c(v)}_{w} \right) + \frac{ D^{c(v)}_{e} }{ D^{c(v)}_{u} } \nonumber\\ &&
-	\times \left(
-		\frac{ f^{c(v)}_{e,j} }{ \hat{\tau}^{c(v)}_{eu} } \left(1 - f^{c(v)}_{u,j}\right) -
-		\frac{ f^{c(v)}_{u,j} }{ \hat{\tau}^{c(v)}_{ue} } \left(1 - f^{c(v)}_{e,j}\right)
-	\right)  \nonumber\\ &&
-	+ \frac{ D^{c(v)}_{g} }{ D^{c(v)}_{u} } \left(
-		\frac{ f^{c(v)}_{g,j} }{ \hat{\tau}^{c(v)}_{gu} } \left(1 - f^{c(v)}_{u,j}\right) -
-		\frac{ f^{c(v)}_{u,j} }{ \hat{\tau}^{c(v)}_{ug} } \left(1 - f^{c(v)}_{g,j}\right)
-	\right)  \nonumber\\ &&
-	- \frac{ \sqrt{ f^{c}_{u,j} f^{v}_{u,j} } }{ \hat{\tau}^{c(v)}_{ur} }
-  \\
-  \label{eq:pc_qd_es}
-  \frac{ {\partial}f^{c(v)}_{e,j} }{ {\partial}t } & = & 
-	\frac{ f^{c(v)}_{u,j} }{ \hat{\tau}^{c(v)}_{ue} }	\left(1 - f^{c(v)}_{e,j}\right) -
-	\frac{ f^{c(v)}_{e,j} }{ \hat{\tau}^{c(v)}_{eu} }	\left(1 - f^{c(v)}_{u,j}\right) \nonumber\\ &&
-	+ \frac{ D^{c(v)}_{g} }{ D^{c(v)}_{e} } \left(
-		\frac{ f^{c(v)}_{g,j} }{ \hat{\tau}^{c(v)}_{ge} } \left(1 - f^{c(v)}_{e,j}\right) -
-		\frac{ f^{c(v)}_{e,j} }{ \hat{\tau}^{c(v)}_{eg} } \left(1 - f^{c(v)}_{g,j}\right)
-	\right)  \nonumber\\ &&
-	- \frac{ 1 }{ N^{c(v)}_{E,j} } \sum_{k} \frac
-		{\Gamma_{k}P_{k,in}g^{e}_{j,k}\left[e^{\left(\left[g_{mod}(t,\lambda_{k}) - \alpha(\lambda_{k})\right]L_{ca}\right)} - 1\right]}
-		{\hbar \omega_{k}\left[g_{mod}(t,\lambda_{k}) - \alpha(\lambda_{k})\right]} \nonumber\\ &&
-	\times
-	\left( f^{c}_{e,j} + f^{v}_{e,j} - 1 \right)
-  \\
-  \label{eq:pc_qd_gs}
-  \frac{ {\partial}f^{c(v)}_{g,j} }{ {\partial}t } & = & 
-	\frac{ f^{c(v)}_{u,j} }{ \hat{\tau}^{c(v)}_{ug} }	\left(1 - f^{c(v)}_{g,j}\right) -
-	\frac{ f^{c(v)}_{g,j} }{ \hat{\tau}^{c(v)}_{gu} }	\left(1 - f^{c(v)}_{u,j}\right) \nonumber\\ &&
-	\frac{ f^{c(v)}_{e,j} }{ \hat{\tau}^{c(v)}_{eg} } \left(1 - f^{c(v)}_{g,j}\right) -
-	\frac{ f^{c(v)}_{g,j} }{ \hat{\tau}^{c(v)}_{ge} } \left(1 - f^{c(v)}_{e,j}\right) \nonumber\\ &&
-	- \frac{ \sqrt{ f^{c}_{g,j} f^{v}_{g,j} } }{ \hat{\tau}_{dr} } - \frac{1}{N^{c(v)}_{G,j}} \nonumber\\ &&
-	\times \left(\sum_{k} 
-	\frac
-		{\Gamma_{k}P_{k,in}g^{g}_{j,k}\left[e^{\left(\left[g_{mod}(t,\lambda_{k}) - \alpha(\lambda_{k})\right]L_{ca}\right)} - 1\right]}
-		{\hbar \omega_{k}\left[g_{mod}(t,\lambda_{k}) - \alpha(\lambda_{k})\right]} + \right. \nonumber\\ && 
-	\left.
-	\frac
-		{\Gamma_{p}P_{p}g^{e}_{j,p}\left[e^{\left(\left[g_{mod}(t,\lambda_{p}) - \alpha(\lambda_{p})\right]L_{ca}\right)} - 1\right]}
-		{\hbar \omega_{p}\left[g_{mod}(t,\lambda_{p}) - \alpha(\lambda_{p})\right]}
-	\right) \nonumber\\ &&
-	\times
-	\left( f^{c}_{g,j} + f^{v}_{g,j} - 1 \right)
-\end{eqnarray}
-\endgroup
-The term $f^{c(v)}_{w}$ represents the carrier occupancy of the QW. Likewise, $f^{c(v)}_{u,j},f^{c(v)}_{e,j},f^{c(v)}_{g,j}$ represents the carrier occupancy of the $j$th group of US, ES, and GS respectively. The term $\Gamma_{k}$ is the optical confinement factor at wavelength $\lambda_{k}$. The term $P_{k,in}$ and $P_{p}$ represents the power of the $k$th photon mode and probe signal, respectively. The term $\alpha(\lambda)$ represents the loss coefficient at a wavelength $\lambda$ which can be the sum of scattering and absorption losses. The term $g_{mod}(t,\lambda_{k})$ is the linear modal gain affected by slow light and can be expressed as the product of slowdown factor, optical confinement factor, and linear material gain of the active region. The term $g^{g(e)}_{j,k}$ is the linear optical gain that the GS (ES) of the $j$-th QD group gives to the $k$-th photon mode is given.
-More details about the PC-QDSOA and physical parameters related to numerical analysis can be found in {\cite{pcqdsoa}}.
-
-\section{AND modeling}
-The schematic diagram of the PC-QDSOA assisted all-optical AND gate is shown in Fig.{\ref{fig:and_gate}}. The AND operation principle is as follows: a modulated data signal A (at wavelength $\lambda_{A}$) and a clock signal (at wavelength $\lambda_{C}$) are injected into the PC-QDSOA1. Then the signal A will induce less gain amplification on a clock signal via cross-gain modulation(XGM) in the PC-QDSOA1 and the logic outcome is NOT A. In the same way as this operation, a modulated data signal NOT A (at wavelength $\lambda_{C}$) and a modulated data signal B (at wavelength $\lambda_{B}$, which can be the same as the wavelength of data A) are injected into the PC-QDSOA2 and the logic outcome is A AND B.
+\section{The proposed all-optical AND gate}
+The schematic diagram of the PC-QDSOA assisted all-optical AND gate is shown in Fig.{\ref{fig:and_gate}}. The AND operation principle is as follows: a data signal A (at wavelength $\lambda_{A}$) and a clock signal (at wavelength $\lambda_{C}$) are injected into the PC-QDSOA1. Then the signal A will induce less gain amplification on a clock signal in the PC-QDSOA1 and the logic outcome is NOT A. In the same way as this operation, the logic outcome of PC-QDSOA2 is A AND B.
 
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=80mm]{and_gate.eps}
+  \includegraphics[width=70mm]{and_gate.eps}
   \caption{Schematic diagram of PC-QDSOA assisted AND gate}
   \label{fig:and_gate}
 \end{center}
 \end{figure}
 
-\section{Results}
+\section{Numerical result}
+% PC-QDSOAがレート方程式で理論解析できることを説明
+In order to numerically analyze the operation of the PC-QDSOAs, we use a rate equation model which can be found in {\cite{pcqdsoa}}.
 % 数値解析方法
-The parameters and results are shown in this section. In order to investigate the quality of AND operation, current injection power and the powers of input signals are varied. The fixed parameters are the wavelength of data signals, bit rate and a width of pulse. The wavelength of data signals and the clock signal are $\lambda_{A,B} = 1307{\rm nm}$ and $\lambda_{C} = 1310{\rm nm}$, respectively. The bit rate is 160Gb/s. The pulses are Gaussian-shaped with a width of 1.2ps. 
-% 入出力結果
-Fig.{\ref{fig:output_signal}} shows the results of the binary outcome when current injection is 4mA and the max power of signals A, B and clock are 10mW, 0.1mW and ${\rm{1 \mu W}}$, respectively. From this result, the proposed gate can operate as an AND gate at 160 Gb/s. Fig.{\ref{fig:eye_dia}} shows an eye diagram for the output result and the extinction ratio of the output signal is 6.03 dB.
+The wavelength of data signals and the clock signal are $\lambda_{A,B} = 1307{\rm nm}$ and $\lambda_{C} = 1310{\rm nm}$, respectively .% 入出力結果
+Fig.{\ref{fig:output_signal}} shows the results of the binary outcome at 160Gb/s and the extinction ratio of the output signal is 6.03 dB. The results show the proposed gate can operate as an AND gate at 160 Gb/s.
 
 \begin{figure}[htbp]
 \begin{center}
   \includegraphics[width=70mm]{and_gate.eps}
-  \caption{Analysis results of PC-QDSOA assisted AND gate operation}
+  \caption{Numerical result of the proposed AND gate}
   \label{fig:output_signal}
 \end{center}
 \end{figure}
 
-\begin{figure}[htbp]
-\begin{center}
-  \includegraphics[width=70mm]{eyedia_4mA.eps}
-  \caption{Eye diagram of output signal}
-  \label{fig:eye_dia}
-\end{center}
-\end{figure}
-
-% 注入電流を変えたときの結果
-On the other hand, because the gain recovery time varies due to the power of current injection, it is necessary to investigate on the effect on power of current injection to the proposed AND gate. Fig.{\ref{fig:different_pump_current}} shows the extinction ratios under different current injection. This result shows the extinction ratio is improving with increasing current injection because pattern-effect is decreasing.
-
-\begin{figure}[htbp]
-\begin{center}
-  \includegraphics[width=70mm]{and_gate.eps}
-  \caption{Extinction ratio under different current injection}
-  \label{fig:different_pump_current}
-\end{center}
-\end{figure}
-
-% TODO::QDSOAとの比較結果
-
-
 \section{Conclusion}
-We have proposed PC-QDSOA assisted all-optical AND gate operating at 160Gb/s and evaluated the performance of the proposed gate by using eye diagram and extinction ratio. The results show the proposed gate can operate as AND gate at 160Gb/s when current injection is over 3.8mA and better performance can be achieved with increasing current injection because pattern-effect decreases.
+We have proposed PC-QDSOA assisted all-optical AND gate operating at 160Gb/s and numerically analyze the proposed gate. The results show the proposed gate can operate as AND gate at 160Gb/s.
 
 \begin{thebibliography}{9}
 \bibitem{qdsoa_ethernet}
-D. Bimberg, M. Laemmlin, C. Meuer, G. Fiol, M. Kuntz, A. Schliwa, N. N. Ledentsov, A. R. Kovsh, ``Quantum Dot Amplifiers for 100 Gbit Ethernet, " {\it ICTON}, pp. 1924--1930, Jun. 2006.
+D. Bimberg, {\it et al}, ``Quantum Dot Amplifiers for 100 Gbit Ethernet, " {\it ICTON}, pp. 1924--1930, Jun. 2006.
 
 \bibitem{3r_regeneration}
 B. Sartorius, ``3R regeneration for all-optical networks, " {\it ICTON}, pp. 333--337, Aug. 2002.
-
-\bibitem{qdsoa_aosp}
-I. Kang, C. Dorrer, L. Zhang, M. Dinu, M. Rasras, L. L. Buhl, S. Cabot, A. Bhardwaj, X. Liu, M. A. Cappuzzo, L. Gomez, A. Wong-Foy, Y. F. Chen, N. K. Dutta, S. S. Patel, D. T. Neilson, C.R. Giles, A. Piccirilli, and J. Jaques, ``Characterization of the dynamical processes in all-optical signal processing using semiconductor optical amplifiers, " {\it IEEE J. Sel. Topics Quantum Electron.}, vol. 14, no.3, pp. 758--769, May/Jun. 2008.
-
-\bibitem{qdsoa_nssm} 
-K. Abedi, and H. Taleb, ``Phase Recovery Acceleration in Quantum-Dot Semiconductor Optical Amplifiers, " {\it J. Lightw. Technol.}, vol. 32, no.12, pp. 237--241, Jun. 2012.
-
-\bibitem{current_cpu}
-(2017, Dec. 8). {\it Intel Core i7-5557U specifications} [Online]. Available: http://www.cpu-world.com/CPUs/Core\_i7/Intel-Core\%20i7-5557U\%20Mobile\%20processor.html
-
-\bibitem{theory_of_qdsoa}
-M. Sugawara, H. Ebe, N. Hatori, M. Ishida, Y. Arakawa, T. Akiyama, K. Otsubo, and Y. Nakata, ``Theory of optical signal amplification and processing by quantum-dot semiconductor optical amplifiers, '' {\it PhysRevB}, vol. 69, Iss. 23, Jun. 2004.
 
 \bibitem{pcqdsoa} 
 H. Taleb, and K. Abedi, ``Optical Gain, Phase, and Refractive Index Dynamics in Photonic Crystal Quantum-Dot Semiconductor Optical Amplifiers, " {\it IEEE J. Quantum Electron.}, vol. 50, no. 8, pp. 605--612, Aug. 2014.
