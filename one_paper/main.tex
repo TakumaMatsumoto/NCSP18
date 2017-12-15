@@ -65,7 +65,7 @@ E-mail:  4416630@ed.tus.ac.jp
 
 \section{Introduction}
 % 全般的な話
-High-speed and large capacity data transmission is required to cope with expanding network traffic data{\cite{qdsoa_ethernet}}. These days, electronic devices realize 3R operations and the problems are their processing speed limitation and energy consumption required for optic-electric/electric-optic conversion{\cite{3r_regeneration}}. All-optical signal processing solve these problems and all-optical logic gates(AOLGs) are essential for realizing the technology. Although many AOLGs using various all-optical devices have been developed, the length of these gates is larger than one of electrical logic gates.
+High-speed and large capacity data transmission is required to cope with expanding network traffic data. These days, electronic devices realize 3R operations and the problems are their processing speed limitation and energy consumption required for optic-electric/electric-optic conversion. All-optical signal processing solve these problems and all-optical logic gates(AOLGs) are essential for realizing the technology. Although many AOLGs using various all-optical devices have been developed, the length of these gates is larger than one of electrical logic gates.
 % 研究の意義・これからやることの説明
 In order to reduce the length of these gates, we propose photonic crystal quantum-dot semiconductor optical amplifiers(PC-QDSOA){\cite{pcqdsoa}} assisted all-optical AND gate. To our knowledge, there is no research about numerically analyzing PC-QDSOA assisted all-optical AND gate. The results in this paper show that the realization of the proposed gate is feasible at 160Gb/s.
 
@@ -82,14 +82,14 @@ The schematic diagram of the PC-QDSOA assisted all-optical AND gate is shown in 
 
 \section{Numerical result}
 % PC-QDSOAがレート方程式で理論解析できることを説明
-In order to numerically analyze the operation of the PC-QDSOAs, we use a rate equation model which can be found in {\cite{pcqdsoa}}.
+In order to numerically analyze the operation of the PC-QDSOAs, we use a rate equation model{\cite{pcqdsoa}}.
 % 数値解析方法
-The wavelength of data signals and the clock signal are $\lambda_{A,B} = 1307{\rm nm}$ and $\lambda_{C} = 1310{\rm nm}$, respectively .% 入出力結果
-Fig.{\ref{fig:output_signal}} shows the results of the binary outcome at 160Gb/s and the extinction ratio of the output signal is 6.03 dB. The results show the proposed gate can operate as an AND gate at 160 Gb/s.
+The wavelength of data signals and the clock signal are $\lambda_{A,B} = 1307{\rm nm}$ and $\lambda_{C} = 1310{\rm nm}$, respectively. % 入出力結果
+Fig.{\ref{fig:output_signal}} shows the input-output characteristics at 160Gb/s and the extinction ratio of the output signal is 6.03 dB. The results show the proposed gate can operate as an AND gate at 160 Gb/s.
 
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=70mm]{and_gate.eps}
+  \includegraphics[width=80mm]{in-out.eps}
   \caption{Numerical result of the proposed AND gate}
   \label{fig:output_signal}
 \end{center}
@@ -99,12 +99,6 @@ Fig.{\ref{fig:output_signal}} shows the results of the binary outcome at 160Gb/s
 We have proposed PC-QDSOA assisted all-optical AND gate operating at 160Gb/s and numerically analyze the proposed gate. The results show the proposed gate can operate as AND gate at 160Gb/s.
 
 \begin{thebibliography}{9}
-\bibitem{qdsoa_ethernet}
-D. Bimberg, {\it et al}, ``Quantum Dot Amplifiers for 100 Gbit Ethernet, " {\it ICTON}, pp. 1924--1930, Jun. 2006.
-
-\bibitem{3r_regeneration}
-B. Sartorius, ``3R regeneration for all-optical networks, " {\it ICTON}, pp. 333--337, Aug. 2002.
-
 \bibitem{pcqdsoa} 
 H. Taleb, and K. Abedi, ``Optical Gain, Phase, and Refractive Index Dynamics in Photonic Crystal Quantum-Dot Semiconductor Optical Amplifiers, " {\it IEEE J. Quantum Electron.}, vol. 50, no. 8, pp. 605--612, Aug. 2014.
 
