@@ -140,7 +140,7 @@ The schematic diagram of the PC-QDSOA all-optical AND gate is shown in Fig. {\re
 
 \section{Results}
 % 数値解析方法
-We numerically analyze the operation of the proposed gate with using MATLAB 2016b and Optisystem 14.0.0. The physical parameters used for solving rate equation can be found in {\cite{pcqdsoa}}. Table.{\ref{table:param}} shows the fixed parameters used for following numerical analysis. The pulses are Gaussian-shaped pulses. \par
+We numerically analyze the operation of the proposed gate with using MATLAB 2016b and Optisystem 14.0.0. The physical parameters used for solving rate equation can be found in {\cite{pcqdsoa}}. Table. {\ref{table:param}} shows the fixed parameters used for following numerical analysis. The pulses are Gaussian-shaped pulses. \par
 \begin{table}[htbp]
   \begin{center}
   \caption{The fixed parameters used for following numerical analysis}
@@ -159,9 +159,9 @@ We numerically analyze the operation of the proposed gate with using MATLAB 2016
   \end{center}
 \end{table}
 % ER,Qについての説明
-To evaluate the proposed gate, we use eye diagram, ER and Q-factor as appropriate metrics. The extinction ratio can be represented as $ER[dB] = 10\log_{10} \left(P^{1}_{min} / P^{0}_{max} \right)$. $P^{1}_{min}$ represents minimum power of signal ``1'' and $P^{0}_{max}$ represents maximum power of signal ``0''. The Q-factor can be represented as $Q = (S_{1}-S_{0})/(\sigma_{1}+\sigma_{0})${\cite{q_factor}} where $S_{1},S_{0}$ are the average power of signal ``1'' and ``0'' and $\sigma_{1},\sigma_{0}$ are the standard deviations of those signals.  \par
+To evaluate the proposed gate, we use eye diagram, extinction ratio (ER) and Q-factor as appropriate metrics. An ER can be represented as $ER[dB] = 10\log_{10} \left(P^{1}_{min} / P^{0}_{max} \right)$. $P^{1}_{min}$ represents minimum power of signal ``1'' and $P^{0}_{max}$ represents maximum power of signal ``0''. The Q-factor can be represented as $Q = (S_{1}-S_{0})/(\sigma_{1}+\sigma_{0})${\cite{q_factor}} where $S_{1},S_{0}$ are the average power of signal ``1'' and ``0'' and $\sigma_{1},\sigma_{0}$ are the standard deviations of those signals.  \par
 % 入出力結果
-Fig. {\ref{fig:in-out}} shows the results of the binary outcome when current injection is 6mA and the max power of signals A, B and clock are 10mW, 0.1mW and ${\rm{1 \mu W}}$, respectively. From this result, the proposed gate can operate as an AND gate at 160 Gb/s. Fig. {\ref{fig:eye_dia}} shows an eye diagram for the output result and the extinction ratio (ER) of the output signal is 8.85 dB.
+Fig. {\ref{fig:in-out}} shows the results of the binary outcome when current injection is 6mA and the max power of signals A, B and clock are 10mW, 0.1mW and ${\rm{1 \mu W}}$, respectively. From this result, the proposed gate can operate as an AND gate at 160 Gb/s. Fig. {\ref{fig:eye_dia}} shows an eye diagram for the output result and the ER of the output signal is 8.85 dB.
 % 注入電流を変えたときの結果
 On the other hand, because the gain recovery time varies due to current injection, it is necessary to investigate on the effect on current injection to the proposed AND gate. Fig. {\ref{fig:ERs_of_pcqdsoa_different_pump_current}} shows the ERs under different current injection. This result shows the ER is improving with increasing current injection because pattern-effect is decreasing.
 
@@ -182,7 +182,7 @@ On the other hand, because the gain recovery time varies due to current injectio
 \end{center}
 \end{figure}
 
-% TODO::QDSOAとの比較結果
+% QDSOAとの比較結果
 In order to show the effectiveness of the proposed gate, we compare the proposed AND gate with the one QDSOA assisted, whose schematic diagram is same as the proposed one. The physical parameters and numerical analysis method of QDSOA can be found in {\cite{qdsoa_nssm}}. Fig. {\ref{fig:comp_ERs}} and Fig. {\ref{fig:comp_Qs}} show the comparison of current injection required to obtain each ERs and Qs for QDSOA AND gate and the proposed one, respectively. From Fig. {\ref{fig:comp_ERs}}, it is said that to obtain ER about 7.5dB, QDSOA assisted AND gate requires 3000mA, whereas the proposed AND gate requires only 5mA. Likewise, from Fig.{\ref{fig:comp_Qs}}, to obtain Q-factor about 5, QDSOA assisted AND gate requires 2800mA, whereas the proposed AND gate requires only 4mA. Moreover, the device length of the QDSOA is 2mm, whereas the one of the PC-QDSOA is 125${\rm{\mu m}}$. From these results, less energy consumption and less volume AND gate can be obtained with use of the proposed gate.
 
 \begin{figure}[htbp]
