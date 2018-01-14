@@ -34,11 +34,11 @@ E-mail:  4416630@ed.tus.ac.jp
 % レート方程式は残しておいたほうがいいかな
 
 \section*{Abstract}
-In this paper, we propose all optical AND gate using photonic crystal (PC) quantum-dot semiconductor optical amplifiers (QDSOAs) and numerically analyze the input-output characteristics to prove that the gate can operate at 160Gb/s. Moreover, in order to show the effectiveness of the proposed gate, we compare the proposed gate with conventional one in terms of degree of integration, energy consumption and performance.
+In this paper, we propose all optical AND gate using photonic crystal (PC) quantum-dot semiconductor optical amplifiers (QDSOAs) and numerically analyze the input-output characteristics to prove that the gate can operate at 160Gb/s. Moreover, in order to show the effectiveness of the gate, we compare the gate with conventional one in terms of degree of integration, energy consumption and performance.
 
 \section{Introduction}
 % 全般的な話
-High-speed and large-capacity data transmission is required to cope with increasing network traffic data {\cite{qdsoa_ethernet}}. In current optical networks, an optical signal goes to its destination through optical fibers with being affected by noise. Thus, re-amplification, re-timing, and re-shaping operations are essential for reliable optical networks. Although electronic devices realize these operations, they have low processing speed and high energy consumption for optical-to-electrical conversion {\cite{3r_regeneration}}. In order to cope with these problems, all-optical signal processing is required and many researchers worked on all-optical devices which realize this technology.
+High-speed and large-capacity data transmission is required to cope with increasing network traffic data. In current optical networks, an optical signal goes to its destination through optical fibers with being affected by noise. Thus, re-amplification, re-timing, and re-shaping operations are essential for reliable optical networks. Although electronic devices realize these operations, they have low processing speed and high energy consumption for optical-to-electrical conversion {\cite{3r_regeneration}}. In order to cope with these problems, all-optical signal processing is required and many researchers worked on all-optical devices which realize this technology.
 % QDSOAについての話
 QDSOA is one of these devices which can be useful in many applications because of its fast gain recovery time and nonlinear optics effect {\cite{qdsoa_aosp}}. QD confines electrons and electron holes, which enables fast gain recovery and SOA's gain saturation enables nonlinear optics effect, respectively.
 % PCについての話
@@ -50,11 +50,11 @@ Few researches discuss about the length of device which is important factor for 
 
 \section{PC-QDSOA model}
 % PC-QDSOAの構成について
-The PC-QDSOAs used in this study are composed of GaAs, ${\rm{In_{0.15}Ga_{0.85}As}}$ and InAs as an active region to enhance optical power around ${\rm{1.3\mu m}}$ {\cite{theory_of_qdsoa}}. The population inversion in the active regions of amplifiers is achieved by passing current through laterally doped ${\rm{p^{+}-p-n^{+}}}$ structures. Also, the waveguide of the PC-QDSOA is W1 PCW wherein slow light can be achieved with either zero group velocity dispersion and zero third order dispersion in specific bandwidth. This waveguide can be archived by proper shifting and narrowing of the first two rows of air holes adjacent to the waveguide core. The schematic diagram of PC-QDSOA waveguide is illustrated in Fig. {\ref{fig:pcqdsoa}}.
+Fig. {\ref{fig:pcqdsoa}} illustrates the schematic diagram of PC-QDSOA waveguide. The PC-QDSOAs used in this study are composed of GaAs, ${\rm{In_{0.15}Ga_{0.85}As}}$, and InAs as an active region to enhance optical power around ${\rm{1.3\mu m}}$-wavelength. The population inversion in the active regions of amplifiers is achieved by passing current through laterally doped ${\rm{p^{+}-p-n^{+}}}$ structures. Also, the waveguide of the PC-QDSOA is W1 PCW wherein slow light can be achieved with either zero group velocity dispersion and zero third order dispersion in specific bandwidth. This waveguide can be archived by creating one line defect in PC slab which has periodical round holes in n- and p- clad region along the direction lightwaves propagate.
 
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=70mm]{pcqdsoa.eps}
+  \includegraphics[width=85mm]{pcqdsoa.eps}
   \caption{Schematic diagram of PC-QDSOA waveguide}
   \label{fig:pcqdsoa}
 \end{center}
@@ -125,14 +125,14 @@ The operation of the PC-QDSOAs can be theoretically studied by means of a rate e
 \end{eqnarray}
 \endgroup
 The term $f^{c(v)}_{w}$ represents the carrier occupancy of the QW. Likewise, $f^{c(v)}_{u,j},f^{c(v)}_{e,j},f^{c(v)}_{g,j}$ represents the carrier occupancy of the $j$th group of US, ES, and GS respectively. The term $\Gamma_{k}$ is the optical confinement factor at wavelength $\lambda_{k}$. The term $P_{k,in}$ and $P_{p}$ represents the power of the $k$th photon mode and probe signal, respectively. The term $\alpha(\lambda)$ represents the loss coefficient at a wavelength $\lambda$ which can be the sum of scattering and absorption losses. The term $g_{mod}(t,\lambda_{k})$ is the linear modal gain affected by slow light and can be expressed as the product of slowdown factor, optical confinement factor, and linear material gain of the active region. The term $g^{g(e)}_{j,k}$ is the linear optical gain that the GS (ES) of the $j$-th QD group gives to the $k$-th photon mode is given.
-More details about the PC-QDSOA and physical parameters related to numerical analysis can be found in  {\cite{pcqdsoa}}.
+More details about the PC-QDSOA and physical parameters related to numerical analysis can be found in reference {\cite{pcqdsoa}}.
 
 \section{AND gate modeling}
-The schematic diagram of the PC-QDSOA all-optical AND gate is shown in Fig. {\ref{fig:and_gate}}. The AND operation principle is as follows: a modulated data signal A (at wavelength $\lambda_{A}$) and a clock signal (at wavelength $\lambda_{CL}$) are injected into the PC-QDSOA1. Then the signal A will induce less gain amplification on a clock signal via cross-gain modulation (XGM) in the PC-QDSOA1 and the logic output is always NOT A. In the same way as this operation, a modulated data signal NOT A (at wavelength $\lambda_{CL}$) and a modulated data signal B (at wavelength $\lambda_{B}$, which can be the same as the wavelength of data A) are injected into the PC-QDSOA2, and the logic output is then A AND B.
+Fig. {\ref{fig:and_gate}} shows the schematic diagram of the PC-QDSOA all-optical AND gate. The AND operation principle is as follows: a modulated data signal A (at wavelength $\lambda_{A}$) and a clock signal (at wavelength $\lambda_{CL}$) are injected into the PC-QDSOA1. Then the signal A will induce less gain amplification on a clock signal via cross-gain modulation (XGM) in the PC-QDSOA1 and the logic output is always NOT A. In the same way as this operation, a modulated data signal NOT A (at wavelength $\lambda_{CL}$) and a modulated data signal B (at wavelength $\lambda_{B}$, which can be the same as the wavelength of data A) are injected into the PC-QDSOA2, and the logic output is then A AND B.
 
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=80mm]{and_gate.eps}
+  \includegraphics[width=85mm]{and_gate.eps}
   \caption{Schematic diagram of PC-QDSOA assisted AND gate}
   \label{fig:and_gate}
 \end{center}
@@ -140,10 +140,10 @@ The schematic diagram of the PC-QDSOA all-optical AND gate is shown in Fig. {\re
 
 \section{Results}
 % 数値解析方法
-We numerically analyze the operation of the proposed gate with using MATLAB 2016b and Optisystem 14.0.0. The physical parameters used for solving rate equation can be found in {\cite{pcqdsoa}}. Table. {\ref{table:param}} shows the fixed parameters used for following numerical analysis. The pulses are Gaussian shaped. \par
+We numerically analyze the operation of the proposed gate with using MATLAB 2016b and Optisystem 14.0.0. The physical parameters used for solving rate equation can be found in {\cite{pcqdsoa}}. Table. {\ref{table:pcqdsoa_param}} represents the fixed parameters used for the PC-QDSOA AND gate. The pulses are Gaussian shaped. \par
 \begin{table}[htbp]
   \begin{center}
-  \caption{The fixed parameters used for following numerical analysis}
+  \caption{The fixed parameters used for the PC-QDSOA AND gate}
   \begin{tabular}{|c|c|c|} \hline
     Parameter & Value & Unit \\ \hline
     Maximum power of Input A & 10 & mW \\ \hline
@@ -155,15 +155,15 @@ We numerically analyze the operation of the proposed gate with using MATLAB 2016
     Full width at half maximum of pulse & 1.2 & ps \\ \hline
     Transmission speed & 160 & Gb/s \\ \hline
   \end{tabular}
-  \label{table:param}
+  \label{table:pcqdsoa_param}
   \end{center}
 \end{table}
 % ER,Qについての説明
-To evaluate the proposed gate, we use eye diagram, extinction ratio (ER) and Q-factor as appropriate metrics. An ER can be represented as $ER[dB] = 10\log_{10} \left(P^{1}_{min} / P^{0}_{max} \right)$. $P^{1}_{min}$ represents minimum power of the binary signal ``1'' and $P^{0}_{max}$ represents maximum power of the binary signal ``0''. The Q-factor can be represented as $Q = (S_{1}-S_{0})/(\sigma_{1}+\sigma_{0})$ {\cite{q_factor}} where $S_{1},S_{0}$ are the average powers of the binary signal ``1'' and ``0'' and $\sigma_{1},\sigma_{0}$ are the standard deviations of those signals. The large numbers of these metrics represent the proposed gate is more appropriate for an all-optical AND gate. \par
+To evaluate the proposed gate, we use eye diagram, extinction ratio (ER), and Q-factor as appropriate metrics. An ER can be represented as $ER[dB] = 10\log_{10} \left(P^{1}_{min} / P^{0}_{max} \right)$. $P^{1}_{min}$ represents minimum power of the binary signal ``1'' and $P^{0}_{max}$ represents maximum power of the binary signal ``0''. The Q-factor can be represented as $Q = (S_{1}-S_{0})/(\sigma_{1}+\sigma_{0})$ where $S_{1},S_{0}$ are the average powers of the binary signal ``1'' and ``0'' and $\sigma_{1},\sigma_{0}$ are the standard deviations of those signals. The large numbers of these metrics represent the proposed gate is more appropriate for an all-optical AND gate. \par
 % 入出力結果
-Fig. {\ref{fig:in-out}} shows the input-output characteristics when current injection is 6mA. This result shows that the proposed gate can operate as an AND gate at 160 Gb/s. Fig. {\ref{fig:eye_dia}} shows an eye diagram for the output signals. As shown in Fig. {\ref{fig:eye_dia}}, the ER and Q-factor of the output signals are 8.85 dB and 7.41.
+Fig. {\ref{fig:in-out}} and Fig. {\ref{fig:eye_dia}} show the input-output characteristics and an eye diagram for the output signals, respectively, when current injection is 6mA. These results show that the proposed gate can operate as an AND gate at 160 Gb/s. As shown in Fig. {\ref{fig:eye_dia}}, the ER and Q-factor of the output signals are 8.85 dB and 7.41.
 % 注入電流を変えたときの結果
-Since the gain recovery time varies due to current injection, we also investigated the effect of current injection on the output signal quality. Fig. {\ref{fig:ERs_of_pcqdsoa_different_pump_current}} shows the ERs under different current injection. This result shows the ER is improving with increasing current injection because pattern-effect is decreasing.
+Since the gain recovery time varies due to current injection, we also investigated the effect of current injection on the quality of output signal. Fig. {\ref{fig:ERs_of_pcqdsoa_different_pump_current}} shows the ERs under different current injection. This result shows the ER is improving with increasing current injection. The proposed gate reaches a maximum ER of approximately 9-dB at 160Gb/s. Fig. {\ref{fig:Qs_of_pcqdsoa_different_pump_current}} shows the Q-factors under different current injection. This result shows the Q-factor improve in proportion to current injection. These results can be obtained because pattern-effect is decreasing with increasing current injection.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -183,26 +183,42 @@ Since the gain recovery time varies due to current injection, we also investigat
 \end{figure}
 
 % QDSOAとの比較結果
-In order to show the effectiveness of the proposed gate, we compare the proposed AND gate with the one QDSOA assisted, whose schematic diagram is same as the proposed one. The physical parameters and numerical analysis method of QDSOA can be found in {\cite{qdsoa_nssm}}. Fig. {\ref{fig:comp_ERs}} and Fig. {\ref{fig:comp_Qs}} show the comparison of current injection required to obtain each ERs and Qs for QDSOA AND gate and the proposed one, respectively. From Fig. {\ref{fig:comp_ERs}}, it is said that to obtain ER about 7.5dB, QDSOA assisted AND gate requires 3000mA, whereas the proposed AND gate requires only 5mA. Likewise, from Fig.{\ref{fig:comp_Qs}}, to obtain Q-factor about 5, QDSOA assisted AND gate requires 2800mA, whereas the proposed AND gate requires only 4mA. Moreover, the device length of the QDSOA is 2mm, whereas the one of the PC-QDSOA is 125${\rm{\mu m}}$. From these results, less energy consumption and less volume AND gate can be obtained with use of the proposed gate.
+In order to show the effectiveness of the proposed gate, we compare the proposed gate with QDSOA AND gate, whose schematic diagram is same as the proposed one. The physical parameters and numerical analysis method of QDSOA can be found in reference {\cite{qdsoa_nssm}}. Table. {\ref{table:qdsoa_param}} represents the fixed parameters used for the QDSOA AND gate. 
+Fig. {\ref{fig:comp_ERs}} and Fig. {\ref{fig:comp_Qs}} show the comparison of current injection required to obtain each ERs and Qs for the QDSOA AND gate and the proposed one, respectively. Fig. {\ref{fig:comp_ERs}} shows that to obtain ER approximately 7.5dB, the QDSOA AND gate requires 3000mA, whereas the proposed AND gate requires only 5mA. Likewise, Fig.{\ref{fig:comp_Qs}} shows that to obtain Q-factor about 5, the QDSOA AND gate requires 2800mA, whereas the proposed gate requires only 4mA. Moreover, the device length of the QDSOA is 2mm, whereas the one of the PC-QDSOA is 125${\rm{\mu m}}$. These results show the proposed AND gate can reduce energy consumption and device volume.
+
+\begin{table}[htbp]
+  \begin{center}
+  \caption{The fixed parameters used for the QDSOA AND gate}
+  \begin{tabular}{|c|c|c|} \hline
+    Parameter & Value & Unit \\ \hline
+    Maximum power of Input A & 10 & mW \\ \hline
+    Maximum power of Input B & 1 & $\mu W$ \\ \hline
+    Maximum power of Clock & 100 & $\mu W$ \\ \hline
+    Wavelength of Input A & 1292 & nm \\ \hline
+    Wavelength of Input B & 1292 & nm \\ \hline
+    Wavelength of Clock & 1290 & nm \\ \hline
+    Full width at half maximum of pulse & 1.2 & ps \\ \hline
+    Transmission speed & 160 & Gb/s \\ \hline
+  \end{tabular}
+  \label{table:qdsoa_param}
+  \end{center}
+\end{table}
 
 \begin{figure}[htbp]
 \begin{center}
-  \includegraphics[width=80mm]{qdsoa_vs_pcqdsoa_ERs.eps}
+  \includegraphics[width=85mm]{qdsoa_vs_pcqdsoa_ERs.eps}
   \caption{ERs under different current injection}
   \label{fig:comp_ERs}
-  \includegraphics[width=80mm]{qdsoa_vs_pcqdsoa_Qs.eps}
-  \caption{Qs under different current injection}
+  \includegraphics[width=85mm]{qdsoa_vs_pcqdsoa_Qs.eps}
+  \caption{Q-factors under different current injection}
   \label{fig:comp_Qs}
 \end{center}
 \end{figure}
 
 \section{Conclusion}
-We have proposed PC-QDSOA all-optical AND gate operating at 160Gb/s and evaluated the performance of the proposed gate by using eye diagram and ER. The results show the proposed gate can operate as AND gate at 160Gb/s when current injection exceeds 6 mA and better performance can be achieved with increasing current injection because pattern-effect decreases.
+We have proposed PC-QDSOA all-optical AND gate operating at 160Gb/s and evaluated the performance of the proposed gate by using eye diagram, ER, and Q-factor. The results show the proposed gate can operate as AND gate at 160Gb/s when current injection exceeds 6 mA. Better performance can be achieved with increasing current injection and a maximum ER of 9-dB can be obtained. Moreover, we compared the QDSOA AND gate with the proposed gate using numerical analysis to prove the efficiency of the proposed gate. As a result, the proposed gate can reduce energy consumption and device volume.
 
 \begin{thebibliography}{9}
-\bibitem{qdsoa_ethernet}
-D. Bimberg, M. Laemmlin, C. Meuer, G. Fiol, M. Kuntz, A. Schliwa, N. N. Ledentsov, A. R. Kovsh, ``Quantum Dot Amplifiers for 100 Gbit Ethernet, " {\it ICTON}, pp. 1924--1930, Jun. 2006.
-
 \bibitem{3r_regeneration}
 B. Sartorius, ``3R regeneration for all-optical networks, " {\it ICTON}, pp. 333--337, Aug. 2002.
 
@@ -215,14 +231,8 @@ K. Abedi, and H. Taleb, ``Phase Recovery Acceleration in Quantum-Dot Semiconduct
 \bibitem{current_cpu}
 (2017, Dec. 8). {\it Intel Core i7-5557U specifications} [Online]. Available: http://www.cpu-world.com/CPUs/Core\_i7/Intel-Core\%20i7-5557U\%20Mobile\%20processor.html
 
-\bibitem{theory_of_qdsoa}
-M. Sugawara, H. Ebe, N. Hatori, M. Ishida, Y. Arakawa, T. Akiyama, K. Otsubo, and Y. Nakata, ``Theory of optical signal amplification and processing by quantum-dot semiconductor optical amplifiers, '' {\it PhysRevB}, vol. 69, no. 23, Jun. 2004.
-
 \bibitem{pcqdsoa} 
 H. Taleb, and K. Abedi, ``Optical Gain, Phase, and Refractive Index Dynamics in Photonic Crystal Quantum-Dot Semiconductor Optical Amplifiers, " {\it IEEE J. Quantum Electron.}, vol. 50, no. 8, pp. 605--612, Aug. 2014.
-
-\bibitem{q_factor} 
-P. Agrawal, ``Fiber-Optic Communication Systems, third ed., " {\it Wiley, John \& Sons.}, May. 2002.
 
 \end{thebibliography}
 
